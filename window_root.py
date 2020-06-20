@@ -1,5 +1,6 @@
 '''
 this is a ui for liver disease prediction ML project.
+made by abhinash sivan.
 
 '''
 
@@ -7,6 +8,19 @@ from PIL import Image, ImageTk
 import PIL.Image
 from Tkinter import *
 from tkinter import ttk
+from window_symptoms import open_window_get_symptoms
+
+def get_symptoms():
+
+    open_window_get_symptoms()
+    return
+
+def model():
+    pass
+def open_window_about():
+    pass
+
+#splash_window
 
 splash_window = Tk()
 splash_window.geometry("1100x650")
@@ -16,6 +30,9 @@ panel = Label(splash_window, image=img)
 panel.pack(side="top", fill="both", expand="yes")
 splash_window.after(3000, lambda: splash_window.destroy())
 splash_window.mainloop()
+
+
+#root_window
 
 root = Tk()
 global i
@@ -31,16 +48,7 @@ Heading.pack()
 
 Frame1 = Frame(MainFrame, bg="#6699cc")
 
-
-def get_symotoms(args):
-    pass
-def model():
-    pass
-def open_window_about():
-    pass
-
-
-button_record = Button(Frame1, text=" ENTER SYMPTOMS", font="times 20", padx=40, pady=20, bg="#3d7ab6", command=get_symotoms)
+button_record = Button(Frame1, text=" ENTER SYMPTOMS", font="times 20", padx=40, pady=20, bg="#3d7ab6", command=get_symptoms)
 button_record.pack(fill="x", pady=20)
 button_process = Button(Frame1, text=" PREDICT ", font="times 20", padx=40, pady=20, bg="#3d7ab6",
                         command=model)
@@ -52,3 +60,4 @@ Frame1.pack(fill="x")
 
 
 root.mainloop()
+
