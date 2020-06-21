@@ -4,13 +4,38 @@ from tkinter import ttk
 
 global v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17
 
+global lis
+
 def proceed():
     global v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17
 
-    print(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17)
+    global lis
+    lis=[]
+    #age_feature_value
+
+
+
+    #other_feature_value
+    lis.append(v1.get())
+    lis.append(v2.get())
+    lis.append(v3.get())
+    lis.append(v4.get())
+    lis.append(v5.get())
+    lis.append(v6.get())
+
+    lis.append(v7.get())
+    lis.append(v8.get())
+    lis.append(v9.get())
+    lis.append(v10.get())
+    lis.append(v12.get())
+    lis.append(v13.get())
+
+    lis.append(v14.get())
+    lis.append(v15.get())
+    lis.append(v16.get())
+    lis.append(v17.get())
 
     return
-
 
 
 def open_window_get_symptoms():
@@ -218,7 +243,10 @@ def open_window_get_symptoms():
     f17.grid(row=6, column=3, pady=10, sticky=W)
 
     button_proceed = Button(window_symptoms, text="PROCEED", font="times 20", command=proceed)
-    button_proceed.grid(row=1, column=4, rowspan=6)
+    button_proceed.grid(row=3, column=4)
+
+    button_back = Button(window_symptoms, text=" BACK  ", font="times 20", command=lambda : window_symptoms.destroy())
+    button_back.grid(row=5, column=4)
 
 
 
@@ -226,10 +254,4 @@ def open_window_get_symptoms():
 
     window_symptoms.mainloop()
 
-
-
-
-
-
-open_window_get_symptoms()
-
+    return lis
