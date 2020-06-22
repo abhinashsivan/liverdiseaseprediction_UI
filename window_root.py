@@ -6,7 +6,6 @@ made by abhinash sivan.
 
 from PIL import Image, ImageTk
 import PIL.Image
-import pickle
 from Tkinter import *
 from tkinter import ttk
 from window_symptoms import open_window_get_symptoms
@@ -18,13 +17,13 @@ def get_symptoms():
     lis = open_window_get_symptoms()
     global feature_list
     for n, item in enumerate(lis):
-        if item == 2:
+        if (n != 0) & (item == 2):
             lis[n] = 0
     feature_list = list(lis)
 
-    with open('history.txt', 'a') as f:
+    with open('history.txt', 'w') as f:
         for item in feature_list:
-            f.write("%s\n" % item)
+            f.write("%s " % item)
     return
 
 
