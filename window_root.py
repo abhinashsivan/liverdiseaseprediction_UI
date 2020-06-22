@@ -6,26 +6,37 @@ made by abhinash sivan.
 
 from PIL import Image, ImageTk
 import PIL.Image
+import pickle
 from Tkinter import *
 from tkinter import ttk
 from window_symptoms import open_window_get_symptoms
 
-global l1
+global feature_list
+
 
 def get_symptoms():
-
     lis = open_window_get_symptoms()
-    global l1
-    l1=[]
-    l1=lis.copy()
+    global feature_list
+    for n, item in enumerate(lis):
+        if item == 2:
+            lis[n] = 0
+    feature_list = list(lis)
+
+    with open('history.txt', 'a') as f:
+        for item in feature_list:
+            f.write("%s\n" % item)
     return
+
 
 def model():
     pass
+
+
 def open_window_about():
     pass
 
-#splash_window
+
+# splash_window
 
 # splash_window = Tk()
 # splash_window.geometry("1100x840")
@@ -37,36 +48,34 @@ def open_window_about():
 # splash_window.mainloop()
 
 
-#root_window
+# root_window
 
 root = Tk()
 global i
 root.geometry("1100x840")
 root.title("LIVER DISEASE PREDICTION USING ML")
+root.config(bg="#ffffff")
 
-Heading = Label(root, text="LIVER DISEASE PREDICTION USING MACHINE LEARNING", font="Cooper 30", padx=10)
-Heading.grid(row=0, column=0, columnspan=2, padx=20, pady=15)
+Heading = Label(root, text="LIVER DISEASE PREDICTION USING MACHINE LEARNING", font="Cooper 30", bg="#ffffff", padx=10)
+Heading.pack(fill='x', pady=10)
 
+MainFrame = Frame(root, padx=40, pady=60, bg="#ffffff")
 
-MainFrame = Frame(root, padx=40, pady=60)
+Frame1 = Frame(MainFrame, bg="#ffffff")
 
-Frame1 = Frame(MainFrame)
-
-button_record = Button(Frame1, text="ENTER SYMPTOMS", width=20,font="times 20", padx=40, pady=20, command=get_symptoms)
-button_record.grid(row=1,column=0,pady=20)
+button_record = Button(Frame1, text="ENTER SYMPTOMS", width=20, font="times 20", padx=40, pady=20, command=get_symptoms)
+button_record.pack(pady=20)
 button_process = Button(Frame1, text="PREDICT", width=20, font="times 20", padx=40, pady=20, command=model)
-button_process.grid(row=2,column=0 , pady=20)
+button_process.pack(pady=20)
 button_recognise = Button(Frame1, text="ABOUT", width=20, font="times 20", padx=40, pady=20, command=open_window_about)
-button_recognise.grid(row=3,column=0 , pady=20)
+button_recognise.pack(pady=20)
 
-Frame1.grid(row=1,column=0 )
+Frame1.pack()
 
-MainFrame.grid(row=1,column=0 )
+MainFrame.pack(side="left")
 
 liver_img = ImageTk.PhotoImage(PIL.Image.open('UI-Materials/l.jpg'))
-panel = Label(root, image=liver_img)
-panel.grid(row=1, column=3)
-
+panel = Label(root, image=liver_img, borderwidth=0, highlightthickness=0)
+panel.pack(side="right")
 
 root.mainloop()
-

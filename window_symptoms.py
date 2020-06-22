@@ -17,25 +17,28 @@ def proceed():
 
     #other_feature_value
     lis.append(v1.get())
-    lis.append(v2.get())
-    lis.append(v3.get())
-    lis.append(v4.get())
-    lis.append(v5.get())
-    lis.append(v6.get())
+    lis.append(v2.get)
+    lis.append(v3.get)
+    lis.append(v4.get)
+    lis.append(v5.get)
+    lis.append(v6.get)
 
-    lis.append(v7.get())
-    lis.append(v8.get())
-    lis.append(v9.get())
-    lis.append(v10.get())
-    lis.append(v12.get())
-    lis.append(v13.get())
+    lis.append(v7.get)
+    lis.append(v8.get)
+    lis.append(v9.get)
+    lis.append(v10.get)
+    lis.append(v12.get)
+    lis.append(v13.get)
 
-    lis.append(v14.get())
-    lis.append(v15.get())
-    lis.append(v16.get())
-    lis.append(v17.get())
+    lis.append(v14.get)
+    lis.append(v15.get)
+    lis.append(v16.get)
+    lis.append(v17.get)
 
-    return
+    print("v1 isssssssssssss")
+    print (v1)
+
+    return lis
 
 
 def open_window_get_symptoms():
@@ -46,23 +49,23 @@ def open_window_get_symptoms():
 
     global v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17
 
-    v1 = tk.IntVar()
-    v2 = tk.IntVar()
-    v3 = tk.IntVar()
-    v4 = tk.IntVar()
-    v5 = tk.IntVar()
-    v6 = tk.IntVar()
-    v7 = tk.IntVar()
-    v8 = tk.IntVar()
-    v9 = tk.IntVar()
-    v10 = tk.IntVar()
-    v11 = tk.IntVar()
-    v12 = tk.IntVar()
-    v13 = tk.IntVar()
-    v14 = tk.IntVar()
-    v15 = tk.IntVar()
-    v16 = tk.IntVar()
-    v17 = tk.IntVar()
+    v1 = Tk.Int()
+    v2 = Tk.Int()
+    v3 = Tk.Int()
+    v4 = Tk.Int()
+    v5 = Tk.Int()
+    v6 = Tk.Int()
+    v7 = Tk.Int()
+    v8 = Tk.Int()
+    v9 = Tk.Int()
+    v10 = Tk.Int()
+    v11 = Tk.Int()
+    v12 = Tk.Int()
+    v13 = Tk.Int()
+    v14 = Tk.Int()
+    v15 = Tk.Int()
+    v16 = Tk.Int()
+    v17 = Tk.Int()
 
 
 
