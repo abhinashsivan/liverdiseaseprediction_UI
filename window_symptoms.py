@@ -38,6 +38,15 @@ def proceed():
     lis.append(v16.get())
     lis.append(v17.get())
 
+    for n, item in enumerate(lis):
+        if (n != 0) & (item == 2):
+            lis[n] = 0
+    feature_list = list(lis)
+
+    f = open("cache.txt", "w")
+    f.write(str(feature_list))
+    f.close()
+
     tkMessageBox.showinfo(title=" LIVER DISEASE PREDICTION SUING ML ", message=" If you have entered dat, kindly go back ")
 
     return
@@ -231,14 +240,7 @@ def open_window_get_symptoms():
 
     window_symptoms.mainloop()
 
-    for n, item in enumerate(lis):
-        if (n != 0) & (item == 2):
-            lis[n] = 0
-    feature_list = list(lis)
 
-    f = open("cache.txt", "w")
-    f.write(str(feature_list))
-    f.close()
 
     return
 

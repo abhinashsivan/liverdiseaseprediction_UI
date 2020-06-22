@@ -1,14 +1,7 @@
-'''
-this is a ui for liver disease prediction ML project.
-made by abhinash sivan.
-
-'''
-
 from PIL import Image, ImageTk
 import PIL.Image
 from window_about import open_window_about
-from bar import  bar
-import tkMessageBox
+from bar import bar
 from Tkinter import *
 from tkinter import ttk
 from window_symptoms import open_window_get_symptoms
@@ -31,6 +24,7 @@ def model():
 
 
 def open_about():
+
     open_window_about()
 
     return
