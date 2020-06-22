@@ -35,14 +35,14 @@ def open_window_about():
 
 # splash_window
 
-# splash_window = Tk()
-# splash_window.geometry("1100x840")
-# splash_window.title("LIVER DISEASE PREDICTION USING ML")
-# img = ImageTk.PhotoImage(PIL.Image.open('UI-Materials/SD.png'))
-# panel = Label(splash_window, image=img)
-# panel.pack(side="top", fill="both", expand="yes")
-# splash_window.after(3000, lambda: splash_window.destroy())
-# splash_window.mainloop()
+splash_window = Tk()
+splash_window.geometry("1100x840")
+splash_window.title("LIVER DISEASE PREDICTION USING ML")
+img = ImageTk.PhotoImage(PIL.Image.open('UI-Materials/SD.png'))
+panel = Label(splash_window, image=img)
+panel.pack(side="top", fill="both", expand="yes")
+splash_window.after(3000, lambda: splash_window.destroy())
+splash_window.mainloop()
 
 
 # root_window

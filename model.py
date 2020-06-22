@@ -5,7 +5,7 @@ from array import *
 
 def open_window_model():
 
-    f = open("filename.txt", "r")
+    f = open("cache.txt", "r")
     feature_list = f.read()
     f.close()
     feature_list = eval(feature_list)

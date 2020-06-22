@@ -236,7 +236,7 @@ def open_window_get_symptoms():
             lis[n] = 0
     feature_list = list(lis)
 
-    f = open("filename.txt", "w")
+    f = open("cache.txt", "w")
     f.write(str(feature_list))
     f.close()
 
