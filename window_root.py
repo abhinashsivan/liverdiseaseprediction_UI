@@ -6,33 +6,31 @@ made by abhinash sivan.
 
 from PIL import Image, ImageTk
 import PIL.Image
+import tkMessageBox
 from Tkinter import *
 from tkinter import ttk
 from window_symptoms import open_window_get_symptoms
+from model import open_window_model
 
 global feature_list
 
 
 def get_symptoms():
-    lis = open_window_get_symptoms()
-    global feature_list
-    for n, item in enumerate(lis):
-        if (n != 0) & (item == 2):
-            lis[n] = 0
-    feature_list = list(lis)
 
-    with open('history.txt', 'w') as f:
-        for item in feature_list:
-            f.write("%s " % item)
+    open_window_get_symptoms()
+
     return
 
 
 def model():
-    pass
+
+    open_window_model()
+    return
 
 
 def open_window_about():
-    pass
+
+    return
 
 
 # splash_window
