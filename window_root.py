@@ -6,6 +6,8 @@ made by abhinash sivan.
 
 from PIL import Image, ImageTk
 import PIL.Image
+from window_about import open_window_about
+from bar import  bar
 import tkMessageBox
 from Tkinter import *
 from tkinter import ttk
@@ -28,7 +30,8 @@ def model():
     return
 
 
-def open_window_about():
+def open_about():
+    open_window_about()
 
     return
 
@@ -36,12 +39,17 @@ def open_window_about():
 # splash_window
 
 splash_window = Tk()
-splash_window.geometry("1100x840")
+splash_window.geometry("1240x590")
 splash_window.title("LIVER DISEASE PREDICTION USING ML")
-img = ImageTk.PhotoImage(PIL.Image.open('UI-Materials/SD.png'))
+img = ImageTk.PhotoImage(PIL.Image.open('UI-Materials/sd2.png'))
 panel = Label(splash_window, image=img)
 panel.pack(side="top", fill="both", expand="yes")
 splash_window.after(3000, lambda: splash_window.destroy())
+
+progress = ttk.Progressbar(splash_window, orient=HORIZONTAL, length=1280, mode='determinate')
+progress.pack(ipady=45)
+bar(progress, splash_window)
+
 splash_window.mainloop()
 
 
@@ -64,7 +72,7 @@ button_record = Button(Frame1, text="ENTER SYMPTOMS", width=20, font="times 20",
 button_record.pack(pady=20)
 button_process = Button(Frame1, text="PREDICT", width=20, font="times 20", padx=40, pady=20, command=model)
 button_process.pack(pady=20)
-button_recognise = Button(Frame1, text="ABOUT", width=20, font="times 20", padx=40, pady=20, command=open_window_about)
+button_recognise = Button(Frame1, text="ABOUT", width=20, font="times 20", padx=40, pady=20, command=open_about)
 button_recognise.pack(pady=20)
 
 Frame1.pack()
