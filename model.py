@@ -85,13 +85,14 @@ def open_window_model():
     button_get_prediction.pack()
 
     global screen2
-    screen2 = Text(f2, height=10, bg="#ccccff")
+    screen2 = Text(f2, height=5, bg="#ccccff")
     screen2.pack(fill="x")
     screen2.configure(font=("Courier", 18,"bold", "italic"))
 
     f2.pack(fill="x")
 
-    button_back = Button(window_model, text="BACK", width=20, font="times 20", padx=40, pady=20,
+    button_back = Button(window_model, text="BACK", width=5\
+                         , font="times 20", padx=40, pady=20,
                                    command=lambda : window_model.destroy())
     button_back.pack(side="right")
     window_model.mainloop()
